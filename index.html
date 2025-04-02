@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Journey of English - Interactive Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'LucideIcons';
+        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
+      }
+      .lucide {
+        font-family: 'LucideIcons';
+        font-size: 1.1rem;
+        line-height: 1;
+        margin-right: 0.5rem;
+        vertical-align: middle;
+        color: #4f46e5; /* indigo-600 */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f3f4f6; /* bg-gray-100 */
+      }
+      .slide {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      .slide.active {
+        display: block;
+        opacity: 1;
+      }
+      .example-block {
+          background-color: #f9fafb; /* bg-gray-50 */
+          border-left: 4px solid #9ca3af; /* border-l-4 border-gray-400 */
+          padding: 0.75rem;
+          margin-top: 0.75rem;
+          border-radius: 0.375rem;
+          font-size: 0.95em;
+      }
+       .contrast-block {
+          background-color: #fee2e2; /* bg-red-50 */
+          border-left: 4px solid #dc2626; /* border-l-4 border-red-600 */
+          padding: 0.75rem;
+          margin-top: 0.75rem;
+          border-radius: 0.375rem;
+           font-size: 0.95em;
+      }
+      .false-friend-btn {
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .feedback {
+          font-size: 0.875rem;
+          font-weight: 600;
+          margin-top: 0.25rem;
+      }
+      .feedback.correct { color: #16a34a; }
+      .feedback.incorrect { color: #dc2626; }
+      .intonation-arrow {
+          font-weight: bold;
+          color: #4f46e5;
+      }
+      .slide-content {
+          animation: fadeIn 0.6s ease-out forwards;
+      }
+      @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-4xl bg-white rounded-lg shadow-xl overflow-hidden">
+        <header class="p-4 sm:p-6 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+            <h1 class="text-xl sm:text-2xl font-bold text-center">The Journey of English</h1>
+        </header>
+
+        <main id="presentation-container" class="p-6 sm:p-8 min-h-[450px] relative overflow-hidden">
+
+            <section class="slide active" data-slide-index="0">
+                <div class="slide-content">
+                    <h2 class="text-2xl font-semibold mb-6 text-indigo-700 text-center"><span class="lucide">&#xe576;</span>Welcome!</h2>
+                    <div class="text-center mb-6">
+                        <p class="text-lg font-semibold text-gray-800">The Journey of English:</p>
+                        <p class="text-md text-gray-600">Origins, Structure, Communication & Italian Contrasts</p>
+                    </div>
+                    <ul class="list-none text-center space-y-2 text-gray-700 mt-4 text-sm">
+                        <li>Presented by: Pedro Gigollotti / GlobalSpeak Pro</li>
+                        <li>Target Audience: Students beginning an English program (Italian native speakers)</li>
+                        <li>Goal: To provide a comprehensive overview of the English language's history, structure, usage variations, and key differences from Italian, emphasizing effective communication.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="slide" data-slide-index="1">
+                 <div class="slide-content">
+                    <h2 class="text-2xl font-semibold mb-4 text-indigo-700"><span class="lucide">&#xe900;</span>From Germanic Tribes to Anglo-Saxon England (c. 450 - 1150)</h2>
+                    <div class="space-y-3 text-gray-700">
+                        <p><strong>Key Points:</strong></p>
+                        <ul class="list-disc list-inside ml-4 space-y-1">
+                            <li>Proto-Indo-European origins (briefly).</li>
+                            <li>Germanic branch: Angles, Saxons, Jutes migrations.</li>
+                            <li>Old English Characteristics: Germanic vocabulary, inflections (case, gender, number), distinct alphabet (þ, ð). Word order was more flexible than Modern English due to these inflections.</li>
+                        </ul>
+                        <div class="example-block">
+                            <p><strong>Example (Beowulf):</strong> <span class="italic">"Hwæt! We Gardena in geardagum..."</span> - Notice the unfamiliar letters and structure.</p>
+                            <p class="mt-2"><strong>Communication Example:</strong> Inflections showed grammatical function: <i>Se cyning geaf þæm þegne hring</i> (The king gave the thane a ring) - word endings indicated roles, allowing some word order variation.</p>
+                        </div>
+                        <div class="contrast-block">
+                            <p><strong>Italian Contrast:</strong> Fundamentally <strong>Germanic</strong> roots vs. Italian's <strong>Latin/Romance</strong> roots. This core difference explains many vocabulary and structural divergences later on.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" data-slide-index="2">
+                <div class="slide-content">
+                    <h2 class="text-2xl font-semibold mb-4 text-indigo-700"><span class="lucide">&#xe3f0;</span>The Norman Conquest & Its Linguistic Revolution (1066)</h2>
+                     <div class="space-y-3 text-gray-700">
+                        <p><strong>Key Points:</strong></p>
+                        <ul class="list-disc list-inside ml-4 space-y-1">
+                           <li>Norman French: Language of power, law, administration, cuisine.</li>
+                           <li>Massive French/Latin vocabulary influx (e.g., <i>government, justice, beef, pork</i>).</li>
+                           <li>Grammar Simplification: Loss of inflections, rise of SVO word order.</li>
+                           <li>The Great Vowel Shift begins (explains spelling quirks).</li>
+                        </ul>
+                        <div class="example-block">
+                            <p><strong>Example (Chaucer):</strong> <span class="italic">"Whan that Aprille with his shoures soote..."</span> - More recognizable, but spelling and some words differ.</p>
+                            <p class="mt-2"><strong>Communication & Nuance (Register):</strong> Synonyms emerge:</p>
+                            <ul class="list-disc list-inside ml-4 space-y-1 mt-1">
+                                <li><i>ask</i> (OE - neutral/informal) vs. <i>inquire</i> (French - formal, often written). Ex: "Can I ask you something?" (Spoken, casual) vs. "We inquire about the status..." (Written, formal).</li>
+                                <li><i>child</i> (OE - general) vs. <i>infant</i> (Latin via French - formal, legal, medical).</li>
+                                <li><i>pig/swine</i> (OE - animal) vs. <i>pork</i> (French - meat).</li>
+                            </ul>
+                           <p class="mt-2">This layering added richness but also complexity for learners.</p>
+                        </div>
+                        <div class="contrast-block">
+                            <p><strong>Italian Contrast:</strong> While Italian borrowed words, the scale and source (French/Latin into a Germanic base) were unique for English, creating many synonym pairs with different formality levels.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" data-slide-index="3">
+                 <div class="slide-content">
+                    <h2 class="text-2xl font-semibold mb-4 text-indigo-700"><span class="lucide">&#xe0f0;</span>Standardization & Expansion: Modern English (c. 1500 - Present)</h2>
+                     <div class="space-y-3 text-gray-700">
+                         <p><strong>Key Points:</strong></p>
+                         <ul class="list-disc list-inside ml-4 space-y-1">
+                             <li><strong>Early Modern (c. 1500-1800):</strong> Renaissance (Latin/Greek borrowing), Shakespeare's influence, Printing Press (standardization), King James Bible.</li>
+                             <li><strong>Late Modern (c. 1800-Present):</strong> Industrial Revolution, British Empire (global spread, borrowing - <i>bungalow, kangaroo</i>), Technology (<i>google, blog, selfie</i>).</li>
+                         </ul>
+                         <div class="example-block">
+                             <p><strong>Example (Neologism):</strong> Technology drives rapid change. Term: <i>doomscrolling</i> (compounding 'doom' + 'scrolling') - consuming large quantities of negative news online. Emerged ~2018-2020, spread via social media (spoken/informal digital register first, now more widely understood).</p>
+                         </div>
+                         <p><strong>Spoken vs. Written:</strong></p>
+                         <p class="ml-4">Standardization primarily impacted written English. Spoken forms continued to diversify globally.</p>
+                     </div>
+                 </div>
+            </section>
+
+            <section class="slide" data-slide-index="4">
+                <div class="slide-content">
+                    <h2 class="text-2xl font-semibold mb-4 text-indigo-700"><span class="lucide">&#xe577;</span>One Language, Many Voices: Variations of English</h2>
+                    <div class="space-y-3 text-gray-700">
+                        <p><strong>Key Points:</strong></p>
+                        <ul class="list-disc list-inside ml-4 space-y-1">
+                            <li>English as a global lingua franca.</li>
+                            <li>World Englishes concept (Kachru's circles: Inner, Outer, Expanding).</li>
+                            <li><strong>Major Variations (BrE vs. AmE Examples):</strong>
+                                <ul class="list-circle list-inside ml-6 space-y-1 example-block">
+                                    <li>Vocabulary: <code>lift</code>/<code>elevator</code>, <code>lorry</code>/<code>truck</code>, <code>biscuit</code>/<code>cookie</code>.</li>
+                                    <li>Spelling: <code>colour</code>/<code>color</code>, <code>centre</code>/<code>center</code>, <code>organise</code>/<code>organize</code>.</li>
+                                    <li>Grammar: "I <i>have just eaten</i>" (BrE) vs. "I <i>just ate</i>" (AmE - simple past often preferred).</li>
+                                    <li>Pronunciation: <i>Tomato</i> BrE /təˈmɑːtəʊ/ vs AmE /təˈmeɪtoʊ/.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Other Varieties:</strong> Canadian, Australian, Indian, Singaporean, Nigerian etc. (each with unique features).</li>
+                        </ul>
+                         <p><strong>Communication Focus:</strong></p>
+                         <p class="ml-4">Focus on <strong>mutual intelligibility</strong>. Awareness of variations prevents misunderstandings in international contexts. No single variety is inherently "better".</p>
+                     </div>
+                 </div>
+            </section>
+
+            <section class="slide" data-slide-index="5">
+                 <div class="slide-content">
+                    <h2 class="text-2xl font-semibold mb-4 text-indigo-700"><span class="lucide">&#xe4d4;</span>The Words We Use: Lexicon (Vocabulary)</h2>
+                     <div class="space-y-3 text-gray-700">
+                         <p><strong>Key Points:</strong></p>
+                         <ul class="list-disc list-inside ml-4 space-y-1">
+                             <li>Vocabulary Layers: Germanic core, Latin/French, Greek, global borrowings.</li>
+                             <li>Word Formation: Affixation (<code>un-</code>, <code>-able</code>), Compounding (<code>blackboard</code>), Conversion (<code>to google</code>).</li>
+                             <li><strong>Exploring Meaning:</strong>
+                                <ul>
+                                    <li>Synonyms (similar meaning, different nuance/register): <i>happy, glad, joyful</i> (formal), <i>pleased, content</i>.</li>
+                                    <li>Antonyms (opposites): <i>good/bad, fast/slow, accept/reject</i>.</li>
+                                    <li>Homophones (sound alike): <i>to/too/two, their/there/they're</i>.</li>
+                                    <li>Homographs (spelled alike): <i>lead</i> (metal) / <i>lead</i> (guide).</li>
+                                    <li>Connotation (implied feeling): <i>curious</i> (positive interest) vs. <i>nosy</i> (negative, intrusive interest). Italian: <i>curioso</i> vs. <i>ficcanaso</i>.</li>
+                                </ul>
+                            </li>
+                         </ul>
+                         <div class="example-block">
+                             <p><strong>Example (Synonyms/Antonyms & Register):</strong> Word: <strong>Good</strong></p>
+                             <ul class="list-disc list-inside ml-6">
+                                <li>Synonyms: <i>fine</i> (neutral), <i>great</i> (informal), <i>excellent</i> (formal), <i>superb</i> (very formal).</li>
+                                <li>Antonyms: <i>bad</i> (neutral), <i>poor</i> (quality), <i>terrible</i> (informal/strong), <i>substandard</i> (formal).</li>
+                             </ul>
+                         </div>
+                         <div class="contrast-block">
+                             <p><strong>Italian Contrast: False Friends (Falsi Amici)!</strong></p>
+                             <p class="mt-2 mb-2 text-sm">Mini-Quiz: Click the English word. Does its meaning match the similar Italian word?</p>
+                             <div id="false-friends-quiz" class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                 </div>
+                         </div>
+                     </div>
+                 </div>
+            </section>
+
+            <section class="slide" data-slide-index="6">
+                <div class="slide-content">
+                    <h2 class="text-2xl font-semibold mb-4 text-indigo-700"><span class="lucide">&#xea12;</span>Putting Words in Order: Syntax (Grammar)</h2>
+                    <div class="space-y-3 text-gray-700">
+                        <p><strong>Key Points:</strong></p>
+                        <ul class="list-disc list-inside ml-4 space-y-1">
+                            <li><strong>Fixed Word Order:</strong> Primarily SVO (Subject-Verb-Object). Crucial for meaning.</li>
+                            <li><strong>Auxiliary Verbs (be, do, have):</strong> Essential for questions, negatives, tenses.</li>
+                            <li><strong>Tense & Aspect:</strong> Focus on difficult areas (Simple Past vs. Present Perfect).</li>
+                            <li><strong>Modal Verbs:</strong> Expressing ability, permission, obligation, possibility (<code>can</code>, <code>could</code>, <code>must</code>, <code>should</code>).</li>
+                            <li><strong>Articles:</strong> <code>a</code>/<code>an</code>/<code>the</code> (complex rules).</li>
+                            <li><strong>Pronouns:</strong> Subject pronouns usually required (<code>I go</code>, not just <code>Go</code>).</li>
+                        </ul>
+                         <div class="example-block">
+                             <p><strong>Example (Word Order & Emphasis):</strong></p>
+                             <ul class="list-disc list-inside ml-4 space-y-1">
+                                <li>Basic SVO: <code>The dog chased the cat.</code></li>
+                                <li>Passive Voice (changes focus): <code>The cat was chased by the dog.</code> (Object becomes subject).</li>
+                                <li>Question (Auxiliary + S + V): <code>Did the dog chase the cat?</code></li>
+                             </ul>
+                         </div>
+                        <div class="contrast-block">
+                            <p><strong>Italian Contrast Points:</strong></p>
+                             <ul class="list-disc list-inside ml-4 space-y-1">
+                                <li><i>Word Order:</i> English = Strict SVO; Italian = More Flexible (<code>Il gatto inseguì il cane</code> / <code>Inseguì il gatto il cane</code> - less common but possible).</li>
+                                <li><i>Auxiliaries:</i> English uses <code>do/does/did</code> for questions/negatives in simple tenses. Italian uses verb inflection/intonation: <code>Do you speak English?</code> vs. <code>Parli inglese?</code></li>
+                                <li><i>Verbs:</i> English = Simpler conjugation; Italian = Complex conjugation.</li>
+                                <li><i>Pronouns:</i> Required subjects in English (<code>He speaks</code> vs. <code>Parla</code>).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" data-slide-index="7">
+                <div class="slide-content">
+                    <h2 class="text-2xl font-semibold mb-4 text-indigo-700"><span class="lucide">&#xe587;</span>The Music of English: Rhythm & Intonation</h2>
+                    <div class="space-y-3 text-gray-700">
+                        <p><strong>Rhythm: Stress-timed (English) vs. Syllable-timed (Italian)</strong></p>
+                        <ul class="list-disc list-inside ml-4 space-y-1">
+                            <li><strong>English (Stress-timed):</strong> Stressed syllables occur at roughly regular intervals; unstressed syllables are compressed. Sounds like: DA-da-da-DA-da-DA-da...</li>
+                            <li><strong>Italian (Syllable-timed):</strong> Each syllable takes roughly the same duration. Sounds like: ta-ta-ta-ta-ta-ta...</li>
+                            <li class="example-block"><strong>Example (English):</strong> "I <strong>want</strong> to <strong>go</strong> to the <strong>shops</strong> to <strong>buy</strong> some <strong>bread</strong>." (Notice how 'to the' and 'some' are quick).</li>
+                            <li><strong>Communication Impact:</strong> Using syllable-timing in English can sound unnatural or 'robotic'. Compressing unstressed syllables is key for fluency.</li>
+                        </ul>
+
+                        <p><strong>Intonation: The Melody of Speech (Focus on Questions)</strong></p>
+                         <ul class="list-disc list-inside ml-4 space-y-1">
+                            <li><strong>Yes/No Questions:</strong> Usually end with <strong>rising</strong> intonation <span class="intonation-arrow">➚</span>.
+                                <ul class="example-block"><li>Ex: "Are you from Rome<span class="intonation-arrow">➚</span>?" "Do you like pizza<span class="intonation-arrow">➚</span>?"</li></ul>
+                            </li>
+                            <li><strong>Wh- Questions (What, Where, When, Why, Who, How):</strong> Usually end with <strong>falling</strong> intonation <span class="intonation-arrow">➘</span>.
+                                <ul class="example-block"><li>Ex: "What time is it<span class="intonation-arrow">➘</span>?" "Where did you go<span class="intonation-arrow">➘</span>?"</li></ul>
+                            </li>
+                             <li><strong>Statements:</strong> Usually end with <strong>falling</strong> intonation <span class="intonation-arrow">➘</span>.
+                                <ul class="example-block"><li>Ex: "The lesson starts at nine<span class="intonation-arrow">➘</span>."</li></ul>
+                            </li>
+                            <li><strong>Intonation for Nuance:</strong> Crucial for expressing attitude!
+                                <ul class="example-block">
+                                    <li>"Really<span class="intonation-arrow">➚</span>?" (Genuine surprise/question)</li>
+                                    <li>"Really<span class="intonation-arrow">➘</span>?" (Doubt, disbelief, sarcasm)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="contrast-block">
+                            <p><strong>Italian Contrast Summary:</strong></p>
+                             <ul class="list-disc list-inside ml-4 space-y-1">
+                                <li><strong>Rhythm:</strong> Major difference (Stress-timed vs. Syllable-timed). A key area for Italian learners.</li>
+                                <li><strong>Yes/No Questions:</strong> Both languages often use rising intonation <span class="intonation-arrow">➚</span>, but English relies on it more heavily alongside auxiliary inversion (Do you...?).</li>
+                                <li><strong>Wh- Questions:</strong> Both often use falling intonation <span class="intonation-arrow">➘</span>, but English pitch movement might be different.</li>
+                                <li><strong>Nuance:</strong> Both use intonation for attitude, but the specific patterns might differ. Over-reliance on Italian patterns can lead to misinterpretation in English.</li>
+                            </ul>
+                        </div>
+                         <p><strong>Communication Focus:</strong> Mastering English rhythm/intonation makes speech sound natural, improves comprehension for listeners, and helps convey/understand attitude correctly.</p>
+                    </div>
+                </div>
+            </section>
+
+             <section class="slide" data-slide-index="8">
+                <div class="slide-content">
+                    <h2 class="text-2xl font-semibold mb-4 text-indigo-700"><span class="lucide">&#xe476;</span>Dressing Up Your Language: Phrase Formation & Register</h2>
+                     <div class="space-y-3 text-gray-700">
+                         <p><strong>Key Points:</strong></p>
+                         <ul class="list-disc list-inside ml-4 space-y-1">
+                             <li>Building blocks: Phrases and clauses.</li>
+                             <li><strong>The Register Continuum:</strong> Frozen -> Formal -> Consultative -> Casual -> Intimate.</li>
+                             <li><strong>Factors:</strong> Audience, Context, Topic, Medium (Spoken/Written).</li>
+                        </ul>
+                        <div class="example-block">
+                            <p><strong>Examples Across Registers:</strong></p>
+                            <p class="mt-2"><strong>1. Requesting a meeting:</strong></p>
+                            <ul class="list-circle list-inside ml-6 space-y-1">
+                                <li><i>Casual (Spoken):</i> "Wanna meet up Tue?"</li>
+                                <li><i>Consultative (Spoken/Email):</i> "Would Tuesday work for a quick chat?"</li>
+                                <li><i>Formal (Email/Letter):</i> "I would like to request a meeting on Tuesday at your earliest convenience..."</li>
+                            </ul>
+                             <p class="mt-3"><strong>2. Agreeing to help:</strong></p>
+                            <ul class="list-circle list-inside ml-6 space-y-1">
+                                <li><i>Casual (Spoken):</i> "Sure thing!" / "No problem."</li>
+                                <li><i>Consultative (Spoken/Written):</i> "Yes, I can certainly do that." / "I'd be happy to help."</li>
+                                <li><i>Formal (Written):</i> "We confirm that assistance will be provided as requested."</li>
+                            </ul>
+                        </div>
+                         <p><strong>Communication Focus & Italian Contrast:</strong></p>
+                         <p class="ml-4 contrast-block"> Ex: Italian <i>"Chiudi la finestra, per favore."</i> (Direct) vs. English <i>"Would you mind closing the window?"</i> or <i>"Could we close the window?"</i> (Indirect).</p>
+                         <p class="ml-4">Choosing the wrong register can seem rude (too informal) or distant (too formal). English often uses more indirectness for politeness than Italian, especially in requests.</p>
+                     </div>
+                 </div>
+            </section>
+
+            <section class="slide" data-slide-index="9">
+                <div class="slide-content">
+                    <h2 class="text-2xl font-semibold mb-4 text-indigo-700"><span class="lucide">&#xea6c;</span>Bridging the Gap: English vs. Italian - Key Communication Contrasts</h2>
+                    <div class="space-y-3 text-gray-700 contrast-block">
+                         <p><strong>Key Points Summary & Communication Impact:</strong></p>
+                         <ul class="list-disc list-inside ml-4 space-y-1">
+                             <li><strong>Phonology (Inc. Rhythm/Intonation):</strong> Different sounds (<code>th</code>), stress-timing, intonation patterns -> Affects intelligibility & perceived attitude.</li>
+                             <li><strong>Vocabulary:</strong> Different roots, False Friends -> Can cause major misunderstandings.</li>
+                             <li><strong>Grammar:</strong> Word order, auxiliaries, articles -> Affects clarity, efficiency, and naturalness.</li>
+                             <li><strong>Pragmatics:</strong> Directness/Indirectness, politeness formulas, register -> Crucial for social/professional success.</li>
+                         </ul>
+                     </div>
+                 </div>
+            </section>
+
+            <section class="slide" data-slide-index="10">
+                 <div class="slide-content">
+                    <h2 class="text-2xl font-semibold mb-4 text-indigo-700"><span class="lucide">&#xe97e;</span>Your English Journey</h2>
+                     <div class="space-y-3 text-gray-700">
+                         <p><strong>Key Points:</strong></p>
+                         <ul class="list-disc list-inside ml-4 space-y-1">
+                             <li>Recap: English is dynamic, constantly evolving.</li>
+                             <li>Understanding its structure, variations, and history helps communication.</li>
+                             <li>Mastering register & being aware of L1 contrasts (Italian), including rhythm and intonation, boosts effectiveness significantly.</li>
+                             <li>Emphasize continuous learning, active practice (especially speaking/listening!), and exposure to authentic materials (news, films, conversations).</li>
+                         </ul>
+                         <p class="mt-6 text-center font-semibold text-lg">Open Floor for Questions!</p>
+                     </div>
+                 </div>
+            </section>
+
+        </main>
+
+        <footer class="p-4 bg-gray-100 border-t border-gray-200 flex justify-between items-center">
+            <button id="prev-btn" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2">
+                <span class="lucide">&#xe079;</span> Prev
+            </button>
+            <span id="slide-counter" class="text-sm text-gray-600">Slide 1 / 11</span>
+            <button id="next-btn" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2">
+                Next
+                <span class="lucide">&#xe07a;</span> </button>
+        </footer>
+
+    </div>
+    <p class="text-xs text-gray-500 mt-4 text-center">Made with ❤️ in Rome</p>
+
+    <script>
+        // Wrap entire script in a try...catch block
+        try {
+            // --- Configuration ---
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideCounter = document.getElementById('slide-counter');
+            const totalSlides = slides.length;
+            let currentSlideIndex = 0;
+            // console.log(`Presentation Initialized: ${totalSlides} slides found.`); // DEBUG logs removed for final version
+
+            // False Friends Quiz Data
+            const falseFriends = [
+                { eng: 'actually', ita: 'attualmente', correct: false, eng_meaning: 'in reality', ita_meaning: 'currently' },
+                { eng: 'eventually', ita: 'eventualmente', correct: false, eng_meaning: 'in the end, finally', ita_meaning: 'possibly, if need be' },
+                { eng: 'sensible', ita: 'sensibile', correct: false, eng_meaning: 'reasonable, practical', ita_meaning: 'sensitive' },
+                { eng: 'library', ita: 'libreria', correct: false, eng_meaning: 'place to borrow books (biblioteca)', ita_meaning: 'bookshop' },
+                { eng: 'factory', ita: 'fattoria', correct: false, eng_meaning: 'place of manufacturing (fabbrica)', ita_meaning: 'farm' },
+                { eng: 'argument', ita: 'argomento', correct: false, eng_meaning: 'disagreement, dispute', ita_meaning: 'topic, subject' },
+                { eng: 'pretend', ita: 'pretendere', correct: false, eng_meaning: 'to fake, feign (fingere)', ita_meaning: 'to demand, expect' },
+                { eng: 'sympathetic', ita: 'simpatico', correct: false, eng_meaning: 'showing understanding/compassion (comprensivo)', ita_meaning: 'nice, likeable' },
+                { eng: 'annoyed', ita: 'annoiato', correct: false, eng_meaning: 'irritated, bothered (infastidito)', ita_meaning: 'bored' }
+            ];
+
+            // --- Functions ---
+
+            function updateSlideDisplay() {
+                // console.log(`Updating display for slide index: ${currentSlideIndex}`);
+                slides.forEach((slide, index) => {
+                    const content = slide.querySelector('.slide-content');
+                    if (index === currentSlideIndex) {
+                        setTimeout(() => {
+                           slide.classList.add('active');
+                           if(content) content.style.animation = 'fadeIn 0.6s ease-out forwards';
+                        }, 10);
+                    } else {
+                        slide.classList.remove('active');
+                         if(content) content.style.animation = 'none';
+                    }
+                });
+                slideCounter.textContent = `Slide ${currentSlideIndex + 1} / ${totalSlides}`;
+                prevBtn.disabled = currentSlideIndex === 0;
+                nextBtn.disabled = currentSlideIndex === totalSlides - 1;
+                // console.log(`Buttons updated: Prev disabled=${prevBtn.disabled}, Next disabled=${nextBtn.disabled}`);
+                if (currentSlideIndex === 5) { // Lexicon slide index
+                    // console.log("Attempting to initialize quiz on slide index 5.");
+                    initializeFalseFriendsQuiz();
+                }
+            }
+
+            function goToNextSlide() {
+                // console.log("Next button clicked or ArrowRight pressed.");
+                if (currentSlideIndex < totalSlides - 1) {
+                    currentSlideIndex++;
+                    updateSlideDisplay();
+                } else {
+                     // console.log("Already on the last slide.");
+                }
+            }
+
+            function goToPrevSlide() {
+                // console.log("Prev button clicked or ArrowLeft pressed.");
+                if (currentSlideIndex > 0) {
+                    currentSlideIndex--;
+                    updateSlideDisplay();
+                } else {
+                    // console.log("Already on the first slide.");
+                }
+            }
+
+            function initializeFalseFriendsQuiz() {
+                const quizContainer = document.getElementById('false-friends-quiz');
+                if (!quizContainer || quizContainer.dataset.initialized === 'true') return;
+                // console.log("Initializing False Friends Quiz...");
+                quizContainer.innerHTML = '';
+                falseFriends.forEach(ff => {
+                    const div = document.createElement('div');
+                    const button = document.createElement('button');
+                    button.textContent = ff.eng;
+                    button.classList.add('false-friend-btn', 'w-full', 'p-2', 'border', 'border-gray-300', 'rounded-md', 'text-sm', 'bg-white', 'hover:bg-gray-100', 'text-left');
+                    button.dataset.correct = ff.correct;
+                    button.dataset.engMeaning = ff.eng_meaning;
+                    button.dataset.itaMeaning = ff.ita_meaning;
+                    button.dataset.itaWord = ff.ita;
+                    const feedbackDiv = document.createElement('div');
+                    feedbackDiv.classList.add('feedback');
+                    button.onclick = handleQuizAnswer;
+                    div.appendChild(button);
+                    div.appendChild(feedbackDiv);
+                    quizContainer.appendChild(div);
+                });
+                 quizContainer.dataset.initialized = 'true';
+                 // console.log("Quiz initialization complete.");
+            }
+
+            function handleQuizAnswer(event) {
+                const button = event.target;
+                // console.log(`Quiz answer clicked: ${button.textContent}`);
+                const feedbackDiv = button.nextElementSibling;
+                feedbackDiv.textContent = '';
+                feedbackDiv.classList.remove('correct', 'incorrect');
+                button.classList.remove('bg-green-100', 'border-green-400', 'bg-red-100', 'border-red-400');
+                feedbackDiv.textContent = `Incorrect! '${button.textContent}' means '${button.dataset.engMeaning}', while '${button.dataset.itaWord}' means '${button.dataset.itaMeaning}'.`;
+                feedbackDiv.classList.add('incorrect');
+                button.classList.add('bg-red-100', 'border-red-400');
+                button.disabled = true;
+            }
+
+            // --- Event Listeners ---
+            if (prevBtn && nextBtn) {
+                 // console.log("Adding click listeners to buttons.");
+                 prevBtn.addEventListener('click', goToPrevSlide);
+                 nextBtn.addEventListener('click', goToNextSlide);
+            } else {
+                 console.error("Navigation buttons not found!");
+            }
+            // console.log("Adding keydown listener to document.");
+            document.addEventListener('keydown', (event) => {
+                // console.log(`Key pressed: ${event.key}`);
+                if (event.key === 'ArrowRight') {
+                    goToNextSlide();
+                } else if (event.key === 'ArrowLeft') {
+                    goToPrevSlide();
+                }
+            });
+
+            // --- Initial Setup ---
+            // console.log("Running initial setup...");
+            updateSlideDisplay();
+            // console.log("Initial setup complete.");
+
+        } catch (error) {
+            // Log error to console ONLY, do not display on page
+            console.error("An error occurred in the presentation script:", error);
+        }
+    </script>
+
+</body>
+</html>
